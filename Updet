@@ -1,0 +1,219 @@
+-- CONFIG
+local PASS_LINK = "https://notevn.com/raw/c8eb5wkz" 
+local EXPECTED_KEY = "bananadepzai" -- <-- mật khẩu bạn đã cung cấp
+local SCRIPT_URL = "https://raw.githubusercontent.com/bokn5848-glitch/8gc-shpbsphvsu9s-u8svu/refs/heads/main/Sscsugsih9s" -- url loadstring gốc
+
+-- SERVICES
+local CoreGui = game:GetService("CoreGui")
+local UserInputService = game:GetService("UserInputService")
+
+-- helper tạo instance
+local function new(class, props)
+    local obj = Instance.new(class)
+    for k,v in pairs(props or {}) do
+        if k == "Parent" then obj.Parent = v
+        else obj[k] = v end
+    end
+    return obj
+end
+
+-- root GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "KeyGateGui"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = CoreGui
+
+-- Main draggable frame (đặt giữa màn hình)
+local frame = new("Frame", {
+    Parent = screenGui,
+    Name = "KeyFrame",
+    Size = UDim2.new(0, 420, 0, 170),
+    Position = UDim2.new(0.5, -210, 0.5, -85), -- giữa màn hình
+    BackgroundTransparency = 0.15,
+    BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+    BorderSizePixel = 0,
+    ClipsDescendants = true,
+})
+frame.Active = true -- cho phép input để kéo
+
+local uic = Instance.new("UICorner", frame)
+uic.CornerRadius = UDim.new(0, 8)
+
+local title = new("TextLabel", {
+    Parent = frame,
+    Size = UDim2.new(1, -20, 0, 30),
+    Position = UDim2.new(0, 10, 0, 8),
+    BackgroundTransparency = 1,
+    Text = "CHECK KEY",
+    TextColor3 = Color3.fromRGB(255,255,255),
+    TextScaled = false,
+    Font = Enum.Font.GothamBold,
+    TextSize = 18,
+    TextXAlignment = Enum.TextXAlignment.Center
+})
+
+local getKeyBtn = new("TextButton", {
+    Parent = frame,
+    Name = "GetKey",
+    Size = UDim2.new(0, 110, 0, 28),
+    Position = UDim2.new(0, 8, 0, 8),
+    BackgroundColor3 = Color3.fromRGB(40,40,40),
+    BorderSizePixel = 0,
+    Text = "GET KEY",
+    Font = Enum.Font.GothamBold,
+    TextSize = 14,
+    TextColor3 = Color3.fromRGB(255,255,255)
+})
+
+local checkKeyBtn = new("TextButton", {
+    Parent = frame,
+    Name = "CheckKey",
+    Size = UDim2.new(0, 120, 0, 28),
+    Position = UDim2.new(1, -128, 0, 8),
+    BackgroundColor3 = Color3.fromRGB(45,45,45),
+    BorderSizePixel = 0,
+    Text = "CHECK KEY",
+    Font = Enum.Font.GothamBold,
+    TextSize = 14,
+    TextColor3 = Color3.fromRGB(255,255,255)
+})
+
+local notify = new("TextLabel", {
+    Parent = frame,
+    Size = UDim2.new(1, -20, 0, 22),
+    Position = UDim2.new(0, 10, 0, 44),
+    BackgroundTransparency = 1,
+    Text = "Ấn Get Key để lấy link mật khẩu.",
+    TextColor3 = Color3.fromRGB(200,200,200),
+    TextSize = 14,
+    Font = Enum.Font.Gotham,
+    TextXAlignment = Enum.TextXAlignment.Center
+})
+
+local keyBox = new("TextBox", {
+    Parent = frame,
+    Name = "KeyBox",
+    Size = UDim2.new(1, -40, 0, 44),
+    Position = UDim2.new(0, 20, 0, 74),
+    BackgroundColor3 = Color3.fromRGB(30,30,30),
+    BorderSizePixel = 0,
+    Text = "",
+    TextColor3 = Color3.fromRGB(255,255,255),
+    PlaceholderText = "Nhập mật khẩu ở đây...",
+    Font = Enum.Font.Gotham,
+    TextSize = 18,
+    ClearTextOnFocus = false,
+    TextWrapped = false
+})
+
+local kc = Instance.new("UICorner", keyBox)
+kc.CornerRadius = UDim.new(0,6)
+
+-- Small helper notify function
+local function showNotify(msg, duration)
+    notify.Text = msg
+    if duration then
+        spawn(function()
+            wait(duration)
+            notify.Text = "Ấn Get Key để lấy link mật khẩu."
+        end)
+    end
+end
+
+-- GET KEY behavior: copy to clipboard if có hỗ trợ, fallback điền link vào ô
+getKeyBtn.MouseButton1Click:Connect(function()
+    local ok = pcall(function()
+        if setclipboard then
+            setclipboard(PASS_LINK)
+        elseif syn and syn.set_clipboard then
+            syn.set_clipboard(PASS_LINK)
+        else
+            error("no_clipboard")
+        end
+    end)
+    if ok then
+        showNotify("Đã copy link nhận key vào clipboard.", 3)
+    else
+        keyBox.Text = PASS_LINK
+        keyBox.CursorPosition = 1
+        showNotify("Không hỗ trợ setclipboard. Link đã được điền vào ô để copy.", 4)
+    end
+end)
+
+-- CHECK KEY behavior: kiểm tra pass, nếu đúng load script
+checkKeyBtn.MouseButton1Click:Connect(function()
+    local entered = keyBox.Text or ""
+    if entered == "" then
+        showNotify("Vui lòng nhập mật khẩu.", 3)
+        return
+    end
+
+    if entered == EXPECTED_KEY then
+        showNotify("Key hợp lệ! Mở script...", 1.5)
+        local ok, err = pcall(function()
+            local s = game:HttpGet(SCRIPT_URL)
+            local f = loadstring(s)
+            if f then f() end
+        end)
+        if not ok then
+            showNotify("Lỗi khi mở script: "..tostring(err), 5)
+        else
+            frame:Destroy()
+        end
+    else
+        showNotify("Key không đúng — kiểm tra lại.", 3)
+    end
+end)
+
+-- Draggable behaviour (kéo toàn bộ frame)
+do
+    local dragging = false
+    local dragInput, dragStart, startPos
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        frame.Position = UDim2.new(
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
+        )
+    end
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = frame.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and dragInput and input == dragInput then
+            update(input)
+        end
+    end)
+end
+
+-- Toggle visibility bằng RightControl
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.RightControl then
+        if frame.Parent then
+            frame.Parent = nil
+        else
+            frame.Parent = screenGui
+        end
+    end
+end)
