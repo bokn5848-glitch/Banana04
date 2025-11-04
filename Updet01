@@ -171,7 +171,7 @@ Tab1:AddButton({
 	Name = "Kill all😎",
 	Callback = function()
         repeat wait(1) until game:IsLoaded()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Kill-all/refs/heads/main/Kill%20all
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Kill-all/refs/heads/main/Kill%20all"))()
 end
 })
 
