@@ -47,6 +47,14 @@ Tab3:AddButton({
 end
 })
 
+Tab4:AddButton({
+	Name = "MM2🔪",
+	Callback = function()
+        repeat wait(1) until game:IsLoaded()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/mm2scripthub/TravHub/refs/heads/main/mm2'))()
+end
+})
+
 Tab3:AddButton({
 	Name = "autu fam tiền🤑",
 	Callback = function()
