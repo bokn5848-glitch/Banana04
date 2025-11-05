@@ -200,10 +200,18 @@ end
 })
 
 Tab6:AddButton({
-	Name = "Gravjty Hub",
+	Name = "Gravjty Hub bản pro",
 	Callback = function()
         repeat wait(1) until game:IsLoaded()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
+end
+})
+
+Tab6:AddButton({
+	Name = "Quantum bản bro",
+	Callback = function()
+        repeat wait(1) until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
 end
 })
 
