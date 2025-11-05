@@ -33,8 +33,14 @@ local Tab5 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Tab6 = Window:MakeTab({
+local Tab7 = Window:MakeTab({
 	Name = "fixlag+ping+fbs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Blox fruits",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -184,6 +190,15 @@ end
 })
 
 Tab6:AddButton({
+	Name = "zis Roblox,
+	Callback = function()
+        repeat wait(1) until game:IsLoaded()
+getgenv().Team = "Marines"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisBVn"))()
+end
+})
+
+Tab7:AddButton({
 	Name = "fixlag+ping+FPS",
 	Callback = function()
         repeat wait(1) until game:IsLoaded()
