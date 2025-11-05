@@ -165,6 +165,8 @@ loadstring(game:HttpGet("https://pastebin.com/raw/SvVYqTh6"))()
 end
 })
 
+
+
 Tab1:AddButton({
 	Name = "ESP👁",
 	Callback = function()
@@ -194,6 +196,14 @@ Tab6:AddButton({
 	Callback = function()
         repeat wait(1) until game:IsLoaded()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisBVn"))()
+end
+})
+
+Tab6:AddButton({
+	Name = "Gravjty Hub",
+	Callback = function()
+        repeat wait(1) until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
 end
 })
 
