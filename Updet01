@@ -193,7 +193,6 @@ Tab6:AddButton({
 	Name = "zis Roblox,
 	Callback = function()
         repeat wait(1) until game:IsLoaded()
-getgenv().Team = "Marines"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisBVn"))()
 end
 })
