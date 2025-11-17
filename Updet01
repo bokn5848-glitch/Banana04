@@ -1,6 +1,6 @@
 -- CONFIG
 local PASS_LINK = "https://notevn.com/raw/c8eb5wkz" 
-local EXPECTED_KEY = "bananadepzai" -- <-- mật khẩu bạn đã cung cấp
+local EXPECTED_KEY = "banana-123-depzai" -- <-- mật khẩu bạn đã cung cấp
 local SCRIPT_URL = "https://raw.githubusercontent.com/bokn5848-glitch/Kkkkkk/refs/heads/main/Vvv" -- url loadstring gốc
 
 -- SERVICES
