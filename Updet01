@@ -2,8 +2,8 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 
        local Window = MakeWindow({
          Hub = {
-         Title = "banana fix lag",
-         Animation = " banana xin chào bạn🖐"
+         Title = "bananahack",
+         Animation = " bananahack xin chào bạn🖐"
          },
         Key = {
         KeySystem = false,
@@ -38,9 +38,11 @@ local Tab3o = MakeTab({Name = "hack hữu ích"})
 
 local Tab4o = MakeTab({Name = "Blox fruit"})
 
-local Tab5o = MakeTab({Name = "fixlag+ping+FPS"})
+local Tab5o = MakeTab({Name = "Hack trò chơi🎮"})
 
-local Tab6o = MakeTab({Name = "fixlag+ping+FPS"})
+local Tab6o = MakeTab({Name = "Đồ họa"})
+
+local Tab7o = MakeTab({Name = "Hành động free"})
      
 ------- BUTTON
     
@@ -221,5 +223,89 @@ AddButton(Tab4o, {
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+end
+})
+
+AddButton(Tab5o, {
+     Name = "MM2🔪",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/mm2scripthub/TravHub/refs/heads/main/mm2'))()
+end
+})
+
+AddButton(Tab5o, {
+     Name = "99 đêm,
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FoxnameHub.lua"))()
+end
+})
+
+AddButton(Tab5o, {
+     Name = "Brookhaven",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-Sander-XY-35845"))()
+end
+})
+
+AddButton(Tab5o, {
+     Name = "dead rail ",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://getnative.cc/script/loader"))()
+end
+})
+
+AddButton(Tab5o, {
+     Name = "tháp tát🖐",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amdzy088/Auto-fire-part-universal-/refs/heads/main/Auto%20fire%20part%20universal"))()
+end
+})
+
+AddButton(Tab6o, {
+     Name = "Đồ họa",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-Shader-37434"))()
+end
+})
+
+AddButton(Tab7o, {
+     Name = "Hành động free",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()
 end
 })
