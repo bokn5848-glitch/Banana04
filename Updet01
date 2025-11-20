@@ -1,219 +1,119 @@
--- CONFIG
-local PASS_LINK = "https://notevn.com/raw/c8eb5wkz" 
-local EXPECTED_KEY = "banana-123-hack" -- <-- mật khẩu bạn đã cung cấp
-local SCRIPT_URL = "https://github.com/bokn5848-glitch/Kkkkkk/blob/main/Vvv" -- url loadstring gốc
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V2/refs/heads/main/UiREDzV2.lua")))()
 
--- SERVICES
-local CoreGui = game:GetService("CoreGui")
-local UserInputService = game:GetService("UserInputService")
+       local Window = MakeWindow({
+         Hub = {
+         Title = "banana fix lag",
+         Animation = " banana xin chào bạn🖐"
+         },
+        Key = {
+        KeySystem = false,
+        Title = "Key System",
+        Description = "",
+        KeyLink = "",
+        Keys = {"1234"},
+        Notifi = {
+        Notifications = true,
+        CorrectKey = "Running the Script...",
+       Incorrectkey = "The key is incorrect",
+       CopyKeyLink = "Copied to Clipboard"
+      }
+    }
+  })
 
--- helper tạo instance
-local function new(class, props)
-    local obj = Instance.new(class)
-    for k,v in pairs(props or {}) do
-        if k == "Parent" then obj.Parent = v
-        else obj[k] = v end
-    end
-    return obj
+       MinimizeButton({
+       Image = "http://www.roblox.com/asset/?id=107646020194486",
+       Size = {60, 60},
+       Color = Color3.fromRGB(10, 10, 10),
+       Corner = true,
+       Stroke = false,
+       StrokeColor = Color3.fromRGB(255, 0, 0)
+      })
+      
+------ Tab
+     local Tab1o = MakeTab({Name = "script CDVN"})
+
+local Tab2o = MakeTab({Name = "fixlag+ping+FPS"})
+
+local Tab3o = MakeTab({Name = "hack hữu ích"})
+
+local Tab4o = MakeTab({Name = "fixlag+ping+FPS"})
+
+local Tab5o = MakeTab({Name = "fixlag+ping+FPS"})
+
+local Tab6o = MakeTab({Name = "fixlag+ping+FPS"})
+     
+------- BUTTON
+    
+    AddButton(Tab2o, {
+     Name = "fix lag",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+  end
+  })
+
+AddButton(Tab2o, {
+     Name = "ping+FPS",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/918282828/refs/heads/main/fixlag"))(fixlag)
+  end
+  })
+
+AddButton(Tab1o, {
+     Name = "pvp CDVN",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Bananadepzai0/refs/heads/main/Luan"))()
 end
-
--- root GUI
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "KeyGateGui"
-screenGui.ResetOnSpawn = false
-screenGui.Parent = CoreGui
-
--- Main draggable frame (đặt giữa màn hình)
-local frame = new("Frame", {
-    Parent = screenGui,
-    Name = "KeyFrame",
-    Size = UDim2.new(0, 420, 0, 170),
-    Position = UDim2.new(0.5, -210, 0.5, -85), -- giữa màn hình
-    BackgroundTransparency = 0.15,
-    BackgroundColor3 = Color3.fromRGB(20, 20, 20),
-    BorderSizePixel = 0,
-    ClipsDescendants = true,
-})
-frame.Active = true -- cho phép input để kéo
-
-local uic = Instance.new("UICorner", frame)
-uic.CornerRadius = UDim.new(0, 8)
-
-local title = new("TextLabel", {
-    Parent = frame,
-    Size = UDim2.new(1, -20, 0, 30),
-    Position = UDim2.new(0, 10, 0, 8),
-    BackgroundTransparency = 1,
-    Text = "CHECK KEY",
-    TextColor3 = Color3.fromRGB(255,255,255),
-    TextScaled = false,
-    Font = Enum.Font.GothamBold,
-    TextSize = 18,
-    TextXAlignment = Enum.TextXAlignment.Center
 })
 
-local getKeyBtn = new("TextButton", {
-    Parent = frame,
-    Name = "GetKey",
-    Size = UDim2.new(0, 110, 0, 28),
-    Position = UDim2.new(0, 8, 0, 8),
-    BackgroundColor3 = Color3.fromRGB(40,40,40),
-    BorderSizePixel = 0,
-    Text = "GET KEY",
-    Font = Enum.Font.GothamBold,
-    TextSize = 14,
-    TextColor3 = Color3.fromRGB(255,255,255)
-})
+AddButton(Tab1o, {
+     Name = "Auto fam tiền🤑",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
 
-local checkKeyBtn = new("TextButton", {
-    Parent = frame,
-    Name = "CheckKey",
-    Size = UDim2.new(0, 120, 0, 28),
-    Position = UDim2.new(1, -128, 0, 8),
-    BackgroundColor3 = Color3.fromRGB(45,45,45),
-    BorderSizePixel = 0,
-    Text = "CHECK KEY",
-    Font = Enum.Font.GothamBold,
-    TextSize = 14,
-    TextColor3 = Color3.fromRGB(255,255,255)
-})
-
-local notify = new("TextLabel", {
-    Parent = frame,
-    Size = UDim2.new(1, -20, 0, 22),
-    Position = UDim2.new(0, 10, 0, 44),
-    BackgroundTransparency = 1,
-    Text = "Ấn Get Key để lấy link mật khẩu.",
-    TextColor3 = Color3.fromRGB(200,200,200),
-    TextSize = 14,
-    Font = Enum.Font.Gotham,
-    TextXAlignment = Enum.TextXAlignment.Center
-})
-
-local keyBox = new("TextBox", {
-    Parent = frame,
-    Name = "KeyBox",
-    Size = UDim2.new(1, -40, 0, 44),
-    Position = UDim2.new(0, 20, 0, 74),
-    BackgroundColor3 = Color3.fromRGB(30,30,30),
-    BorderSizePixel = 0,
-    Text = "",
-    TextColor3 = Color3.fromRGB(255,255,255),
-    PlaceholderText = "Nhập mật khẩu ở đây...",
-    Font = Enum.Font.Gotham,
-    TextSize = 18,
-    ClearTextOnFocus = false,
-    TextWrapped = false
-})
-
-local kc = Instance.new("UICorner", keyBox)
-kc.CornerRadius = UDim.new(0,6)
-
--- Small helper notify function
-local function showNotify(msg, duration)
-    notify.Text = msg
-    if duration then
-        spawn(function()
-            wait(duration)
-            notify.Text = "Ấn Get Key để lấy link mật khẩu."
-        end)
-    end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Banana0/refs/heads/main/Banana"))()
 end
+})
 
--- GET KEY behavior: copy to clipboard if có hỗ trợ, fallback điền link vào ô
-getKeyBtn.MouseButton1Click:Connect(function()
-    local ok = pcall(function()
-        if setclipboard then
-            setclipboard(PASS_LINK)
-        elseif syn and syn.set_clipboard then
-            syn.set_clipboard(PASS_LINK)
-        else
-            error("no_clipboard")
-        end
-    end)
-    if ok then
-        showNotify("Đã copy link nhận key vào clipboard.", 3)
-    else
-        keyBox.Text = PASS_LINK
-        keyBox.CursorPosition = 1
-        showNotify("Không hỗ trợ setclipboard. Link đã được điền vào ô để copy.", 4)
-    end
-end)
+AddButton(Tab1, {
+     Name = "auto đánh boss👹",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
 
--- CHECK KEY behavior: kiểm tra pass, nếu đúng load script
-checkKeyBtn.MouseButton1Click:Connect(function()
-    local entered = keyBox.Text or ""
-    if entered == "" then
-        showNotify("Vui lòng nhập mật khẩu.", 3)
-        return
-    end
-
-    if entered == EXPECTED_KEY then
-        showNotify("Key hợp lệ✅️! Mở script...", 1.5)
-        local ok, err = pcall(function()
-            local s = game:HttpGet(SCRIPT_URL)
-            local f = loadstring(s)
-            if f then f() end
-        end)
-        if not ok then
-            showNotify("Lỗi khi mở script: "..tostring(err), 5)
-        else
-            frame:Destroy()
-        end
-    else
-        showNotify("Key không đúng❌️ — kiểm tra lại.", 3)
-    end
-end)
-
--- Draggable behaviour (kéo toàn bộ frame)
-do
-    local dragging = false
-    local dragInput, dragStart, startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        frame.Position = UDim2.new(
-            startPos.X.Scale,
-            startPos.X.Offset + delta.X,
-            startPos.Y.Scale,
-            startPos.Y.Offset + delta.Y
-        )
-    end
-
-    frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = frame.Position
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if dragging and dragInput and input == dragInput then
-            update(input)
-        end
-    end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Bananahahah/refs/heads/main/Luan"))()
 end
+})
 
--- Toggle visibility bằng RightControl
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end
-    if input.KeyCode == Enum.KeyCode.RightControl then
-        if frame.Parent then
-            frame.Parent = nil
-        else
-            frame.Parent = screenGui
-        end
-    end
-end)
+AddButton(Tab3o, {
+     Name = "Bay",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+end
+})
+
+
