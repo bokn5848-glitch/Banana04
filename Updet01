@@ -3,7 +3,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
        local Window = MakeWindow({
          Hub = {
          Title = "bananahack",
-         Animation = " bananahack xin chào bạn🖐"
+         Animation = "bananahack xin chào bạn🖐"
          },
         Key = {
         KeySystem = false,
@@ -94,18 +94,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Banan
 end
 })
 
-AddButton(Tab1, {
-     Name = "auto đánh boss👹",
-    Callback = function()
-	  local Settings = {
-  JoinTeam = "Pirates"; -- Pirates/Marines
-  Translator = true; -- true/false
-}
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Bananahahah/refs/heads/main/Luan"))()
-end
-})
-
 AddButton(Tab3o, {
      Name = "Bay",
     Callback = function()
@@ -178,7 +166,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 end
 })
 
-AddButton(Tab2o, {
+AddButton(Tab3o, {
      Name = "Dí🤡",
     Callback = function()
 	  local Settings = {
@@ -239,7 +227,7 @@ end
 })
 
 AddButton(Tab5o, {
-     Name = "99 đêm,
+     Name = "99 đêm",
     Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
