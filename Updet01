@@ -94,6 +94,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/Banan
 end
 })
 
+AddButton(Tab1o, {
+     Name = "aotu fam boss👹",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/chauhoi1962-hash/cuong624soshh/refs/heads/main/dongphandzhehe.lua"))()
+end
+  })
+
 AddButton(Tab3o, {
      Name = "Bay",
     Callback = function()
