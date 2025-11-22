@@ -70,6 +70,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bokn5848-glitch/91828
   end
   })
 
+AddButton(Tab3o, {
+     Name = "anti fling",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/teamscriptindonesia-pixel/Anti-fling-nweww/refs/heads/main/Anti%20fling%20neweee"))()
+end
+  })
+
 AddButton(Tab1o, {
      Name = "pvp CDVN",
     Callback = function()
