@@ -239,6 +239,18 @@ end
 })
 
 AddButton(Tab5o, {
+     Name = "blue lock opponent điềukhiênr banh",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/r4mpage4/LuaCom/refs/heads/main/ControlBall.rivals"))()
+end
+  })
+
+AddButton(Tab5o, {
      Name = "99 đêm",
     Callback = function()
 	  local Settings = {
