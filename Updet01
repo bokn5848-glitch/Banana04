@@ -79,7 +79,7 @@ AddButton(Tab3o, {
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/teamscriptindonesia-pixel/Anti-fling-nweww/refs/heads/main/Anti%20fling%20neweee"))()
-end
+  end
   })
 
 AddButton(Tab1o, {
