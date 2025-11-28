@@ -58,6 +58,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main
   end
   })
 
+AddButton(Tab5o, {
+     Name = "lumber tycoon2",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+loadstring(game:HttpGet("https://rawscripts.net/raw/Lumber-Tycoon-2-Kron-Hub-20796"))()
+end
+})
+
+AddButton(Tab2o, {
+     Name = "fix lag",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+  end
+  })
+
 AddButton(Tab2o, {
      Name = "ping+FPS",
     Callback = function()
