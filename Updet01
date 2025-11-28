@@ -64,9 +64,11 @@ AddButton(Tab5o, {
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
   Translator = true; -- true/false
+}
+
 loadstring(game:HttpGet("https://rawscripts.net/raw/Lumber-Tycoon-2-Kron-Hub-20796"))()
-end
-})
+  end
+  })
 
 AddButton(Tab2o, {
      Name = "ping+FPS",
