@@ -59,7 +59,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main
   })
 
 AddButton(Tab5o, {
-     Name = "lumber tycoon2",
+     Name = "lumber tycoon 2",
     Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
