@@ -263,7 +263,7 @@ end
 })
 
 AddButton(Tab5o, {
-     Name = "blue lock opponent điềukhiênr banh",
+     Name = "blue lock opponent điều khiển banh",
     Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
