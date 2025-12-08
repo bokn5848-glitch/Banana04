@@ -130,6 +130,30 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/chauhoi1962-hash/cuon
 end
   })
 
+AddButton(Tab5o, {
+     Name = "strongman simolator",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Strongman-Simulator-Strongman-Simolator-41260"))()
+end
+})
+
+AddButton(Tab4o, {
+     Name = "buffalo hub",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdao2k4/buffalo/refs/heads/main/buffalomain.lua"))()
+end
+})
+
 AddButton(Tab3o, {
      Name = "Bay",
     Callback = function()
