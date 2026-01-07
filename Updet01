@@ -95,7 +95,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teamscriptindonesia-p
   })
 
 AddButton(Tab3o, {
-     Name = "anti fling",
+     Name = "aim",
     Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
