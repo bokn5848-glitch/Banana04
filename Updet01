@@ -94,6 +94,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teamscriptindonesia-p
   end
   })
 
+AddButton(Tab3o, {
+     Name = "anti fling",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DanielHubll/DanielHubll/refs/heads/main/Aimbot%20Mobile"))()
+  end
+  })
+
+
 AddButton(Tab1o, {
      Name = "pvp CDVN",
     Callback = function()
