@@ -274,6 +274,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/amdzy088/Auto-fire-pa
 end
 })
 
+AddButton(Tab5o, {
+     Name = "trùm gỗ 2",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+end
+})
+
 AddButton(Tab6o, {
      Name = "Đồ họa",
     Callback = function()
